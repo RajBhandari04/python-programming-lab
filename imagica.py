@@ -4,6 +4,17 @@ sum=0
 while 1:
     sum=0
     msgbox("Welcome to Amusement World",image="amuse.jpg")  
+    
+    msgbox("please create your account in order to continue")
+    
+    y=enterbox("enter username")
+    passwordbox(msg="Enter your password",title="Password")
+    
+    msgbox("welcome "+y)
+
+    msg="Would you like to to get notifications about our offers?"
+    title="Notifications"
+    choice=ynbox(msg,title)
 
     msg ="What is your age?" 
     title = "Verification"   
@@ -61,9 +72,16 @@ while 1:
      choice=indexbox(msg,title,choices,image="dora.jpeg")
      if choice==0:
        sum+=125
-     
+   
     x=enterbox("Please enter your preferred date to visit")
     msgbox(msg="See you on "+x ,image="cal.jpeg") 
 
-    textbox(msg="bill",title="bill",text=str(sum)) 
-    sys.exit(0)
+    msgbox("Please use the promocode-vit50 if you're from VIT to avail 50% off")
+
+    z=enterbox("Do you have a promocode?")
+    if z=="vit50":
+      a=sum*0.5
+      textbox(msg="bill",title="bill",text=str(a))
+    else:
+      textbox(msg="bill",title="bill",text=str(sum))
+    sys.exit(0) 
